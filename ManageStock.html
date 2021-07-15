@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <title>Stock Manager</title>
+</head>
+
+<body>
+    <input type="submit" value="Log out" onclick="location.replace('index.html')">
+
+    <h2>Stock Manager</h2>
+    <div id="ScreenForStock">
+        <div>
+            <div>
+                <input id="ID" type="text">
+                <input id="Name" type="text">
+                <input id="Grade" type="text">
+                <input id="Origin" type="text">
+                <input id="UnitPrice" type="text">
+                <input id="Availability" type="text">
+                <input id="Shipping" type="text">
+                <input id="Promotion" type="text">
+
+                <button id="add">Add</button>
+                <button id="myUpdate">Update</button>
+                <button id="clear">Clear</button>
+
+            </div>
+
+            <br>
+
+            <table id="tableStock">
+                <thead>
+                    <th>Barcode</th>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Origin</th>
+                    <th>Unit Price</th>
+                    <th>Availability</th>
+                    <th>Shipping</th>
+                    <th>Promotion</th>
+                    <th colspan="2">Adjust</th>
+                </thead>
+                <tbody id="StockBody">
+
+                </tbody>
+            </table>
+
+        </div>
+        <br>
+    </div>
+
+    <script src="js/FetchDesiredData.js"></script>
+
+    <script src="js/GeneralDisplayTable.js"></script>
+
+    <script src="js/DisplayStock.js"></script>
+
+</body>
+
+</html>
