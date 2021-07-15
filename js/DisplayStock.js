@@ -7,7 +7,7 @@ const update2 = document.getElementById('myUpdate');
 const delete1 = document.getElementsByClassName('delBtn');
 const clear = document.getElementById('clear');
 
-const theID = document.getElementById("ID");
+const theID = document.getElementById("idx");
 const name1 = document.getElementById('Name');
 const grade = document.getElementById('Grade');
 const origin1 = document.getElementById('Origin');
@@ -27,7 +27,7 @@ clear.addEventListener('click', () => {
 
 async function updateListStock(id) {
     await updateItem(stockRealTime, id, {
-        "ID": theID.value,
+        "idx": theID.value,
         "name": name1.value,
         "grade": grade.value,
         "origin": origin1.value,
@@ -42,7 +42,7 @@ async function updateListStock(id) {
 
 add.addEventListener('click', async function() {
     await addNewItem(stockRealTime, {
-        "ID": theID.value,
+        "idx": theID.value,
         "name": name1.value,
         "grade": grade.value,
         "origin": origin1.value,

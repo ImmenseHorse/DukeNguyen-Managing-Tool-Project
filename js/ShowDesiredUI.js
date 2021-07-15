@@ -1,11 +1,10 @@
-
 const login = document.getElementById("login");
 const username = document.getElementById("username");
 const pass = document.getElementById("pass");
 const rmCheck = document.getElementById("rememberMe");
 
 //Login
-async function load(){
+async function load() {
     const conn = await fetch("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/loginData");
     const users = await conn.json();
     console.log(users);
@@ -43,24 +42,22 @@ async function load(){
 
     });
 
-    if(localStorage.checkbox && localStorage.checkbox !== ''){
-        rmCheck.setAttribute("checked","checked");
+    if (localStorage.checkbox && localStorage.checkbox !== '') {
+        rmCheck.setAttribute("checked", "checked");
         username.value = localStorage.username;
         pass.value = localStorage.pass;
-    }
-    else{
+    } else {
         rmCheck.removeAttribute("checked");
         username.value = "";
         pass.value = "";
     }
 
-    login.addEventListener('click',() => {
-        if(rmCheck.checked && username.value !== "" && pass.value !== ""){
+    login.addEventListener('click', () => {
+        if (rmCheck.checked && username.value !== "" && pass.value !== "") {
             localStorage.username = username.value;
             localStorage.pass = pass.value;
             localStorage.checkbox = rmCheck.value;
-        }
-        else{
+        } else {
             localStorage.username = "";
             localStorage.pass = "";
             localStorage.checkbox = "";
@@ -70,54 +67,41 @@ async function load(){
 
 load();
 
-//Regis   =========================================================================================
+//Register   =========================================================================================
 
 let regisUsername = document.getElementById("regis-username");
 let regisPass = document.getElementById("regis-pass");
-let regisPassAgian = document.getElementById("passagain");
+let regisPassAgain = document.getElementById("passagain");
 let regisEmail = document.getElementById("email");
-let btnCheckMana = document.getElementById("ManageEmployees");
-let regisSDT = document.getElementById("sdt");
+let btnCheckEmployees = document.getElementById("ManageEmployees");
+let regisTel = document.getElementById("tel");
 
 let btnRegis = document.getElementById("register2");
 const register = {};
 
-async function postData(url = '', data = {}){
-    const response = await fetch(url, {
-        method: 'POST',
-        mode: 'cors', 
-        cache: 'no-cache', 
-        credentials: 'same-origin', 
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify(data)
-    });
-    return JSON.stringify(data);
-}
-
 btnRegis.addEventListener('click', () => {
-    if(!(regisUsername.value) || !(regisPass.value) || !(regisPassAgian.value) || !(regisEmail.value) || !(regisSDT.value)){
-        alert("Mời nhập đủ");
+    if (!(regisUsername.value) || !(regisPass.value) || !(regisPassAgain.value) || !(regisEmail.value) || !(regisTel.value)) {
+        alert("Please Enter All Values");
     }
-    else if(regisPass.value != regisPassAgian.value){
-        alert("Pass chưa được xác nhận");
-    }
-    else{
+    if (regisPass.value != regisPassAgain.value) {
+        alert("Invalid Password");
+    } else {
         register['username'] = regisUsername.value;
         register['password'] = regisPass.value;
         register['email'] = regisEmail.value;
-        register['SDT'] = regisSDT.value;
-        if(btnCheckMana == true) register["registeredFunction"] = btnCheckMana.value;
-        else register["registeredFunction"] = "ManageStock";
-        postData("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/loginData", register).then(data =>{
+        register['tel'] = regisTel.value;
+        if (btnCheckEmployees == true) {
+            register["registeredFunction"] = btnCheckEmployees.value;
+        } else {
+            register["registeredFunction"] = "ManageStock";
+        }
+        addNewItem("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/loginData", register).then(data => {
             console.log(data);
-            alert("Đăng kí thành công");
+            alert("Congratulations, your account has been successfully created.");
+            alert("Welcome to Managing Tool, " + regisUsername.value + '.');
         });
         document.getElementById("login-form").style.display = "block";
         document.getElementById("register").style.display = "none";
-    } 
-    
+    }
+
 });

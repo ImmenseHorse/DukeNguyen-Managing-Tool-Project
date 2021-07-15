@@ -1,4 +1,5 @@
 let stock = [{
+    "id": "1",
     "name": "Cherry",
     "grade": "Premium",
     "origin": "Canada",
@@ -7,11 +8,11 @@ let stock = [{
     "shipping": "yes",
     "promotion": "8% off on the Unit Price when buy more than 3 kg",
     "username": "thinh",
-    "ID": "123AS56",
-    "id": "1"
+    "idx": "123AS56"
 }];
 
 let employee = [{
+    "id": "1",
     "name": "Nguyen Manh Duc",
     "degree": "BSc, Computer Science from RyersonU",
     "age": "19",
@@ -21,23 +22,24 @@ let employee = [{
     "promotionstatus": "Already at highest position",
     "bonus": "2,000,000 VND this month",
     "username": "duke",
-    "ID": "320MD64910",
-    "id": "1"
+    "idx": "320MD64910"
 }];
 
 
 const users = [{
+        "id": "1",
         "username": "thinh",
         "password": "thinh24",
         "email": "thinh234@gmail.com",
-        "registeredFunction": "ManageStock",
-        "id": "1"
+        "tel": "091234567",
+        "registeredFunction": "ManageStock"
     },
     {
+        "id": "2",
         "username": "duke",
         "password": "coder",
         "email": "manhducams@gmail.com",
-        "registeredFunction": "ManageEmployees",
-        "id": "2"
+        "tel": "0902231175",
+        "registeredFunction": "ManageEmployees"
     }
 ];

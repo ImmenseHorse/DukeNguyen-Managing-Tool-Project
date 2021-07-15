@@ -1,10 +1,9 @@
 const displayItems = (object, x) => {
     let strHTML = '';
     for (let i in object) {
-        if (i === "ID") {
+        if (i === "idx") {
             strHTML = `<td>${object[i]}</td>` + strHTML;
-        }
-        if (i != "id" && i != "username" && i != "ID") {
+        } else if (i != "username") {
             strHTML += `<td>${object[i]}</td>`;
         }
     };
@@ -50,7 +49,7 @@ function updateOneItem(json, updButton) {
         document.getElementsByClassName(`${i["id"]}`)[1].addEventListener('click', () => {
             add.style.display = 'none';
             updButton.style.display = 'inline';
-            theID.value = i["ID"];
+            theID.value = i["idx"];
             name1.value = i["name"];
             grade.value = i["grade"];
             origin1.value = i["origin"];
