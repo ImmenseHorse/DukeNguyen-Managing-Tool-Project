@@ -4,8 +4,8 @@ let stock = [{
     "grade": "Premium",
     "origin": "Canada",
     "unitprice": "1300000",
-    "availability": "yes",
-    "shipping": "yes",
+    "availability": "97.8",
+    "shipping": "0",
     "promotion": "8% off on the Unit Price when buy more than 3 kg",
     "username": "thinh",
     "idx": "123AS56"
@@ -41,5 +41,21 @@ const users = [{
         "email": "manhducams@gmail.com",
         "tel": "0902231175",
         "registeredFunction": "ManageEmployees"
+    },
+    {
+        "username": "1",
+        "password": "1",
+        "email": "1",
+        "tel": "1",
+        "registeredFunction": "ManageStock",
+        "id": "3"
+    },
+    {
+        "username": "minh",
+        "password": "minh21",
+        "email": "minh@gmail",
+        "tel": "09878766",
+        "registeredFunction": "ManageStock",
+        "id": "4"
     }
 ];
