@@ -1,29 +1,36 @@
-html, body {
+html,
+body {
     font-family: 'Open Sans', sans-serif;
     height: 100%;
-  }
-  body {
+}
+
+body {
     background: #FFFFFF;
     height: 100%;
-  }
-  img {
+}
+
+img {
     max-width: 100%;
-  }
-  ul {
+}
+
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  a {
+}
+
+a {
     text-decoration: none;
-  }
-  #header {
+}
+
+#header {
     float: left;
     width: 100%;
     background: #ffffff;
     position: relative;
-  }
-  .white-label {
+}
+
+.white-label {
     float: left;
     background: #33373B;
     max-width: 210px;
@@ -32,63 +39,77 @@ html, body {
     background: #279BE4;
     width: 100%;
     max-height: 44px;
-  }
-  .white-label img {
+}
+
+.white-label img {
     max-height: 43px;
-  }
-  .header-nav {
+}
+
+.header-nav {
     min-height: 64px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     background: #279BE4;
-  }
-  .menu-button {
+}
+
+.menu-button {
     float: left;
     font-size: 29px;
     color: #fff;
     padding: 12px 19px;
-  }
-  .nav ul {
+}
+
+.nav ul {
     height: 64px;
     float: right;
-  }
-  .nav ul li {
+}
+
+.nav ul li {
     float: left;
     position: relative;
     padding: 11px;
-  }
-  .nav > ul > li:first-child {
+}
+
+.nav>ul>li:first-child {
     border-left: none;
-  }
-  .nav ul li a {
+}
+
+.nav ul li a {
     color: #fff;
     padding: 1px;
     float: left;
-  }
-  .nav ul li i {
+}
+
+.nav ul li i {
     color: #fff;
-  }
-  .nav ul li:hover {
+}
+
+.nav ul li:hover {
     background: #01A9F0;
     color: #fff;
-  }
-  .user-profile {
+}
+
+.user-profile {
     float: right;
-  }
-  .user-profile > div {
+}
+
+.user-profile>div {
     float: left;
     padding: 20px 8px;
     position: relative;
-  }
-  .user-profile i {
+}
+
+.user-profile i {
     font-size: 1.2em;
     color: #5F6F86;
-  }
-  .user-profile i:hover {
+}
+
+.user-profile i:hover {
     color: #397AC5;
-  }
-  .font-icon i:after {
+}
+
+.font-icon i:after {
     position: absolute;
     content: '3';
     background: #E74C3C;
@@ -101,58 +122,70 @@ html, body {
     text-align: center;
     top: 12px;
     right: 11px;
-  }
-  .font-icon {
+}
+
+.font-icon {
     padding: 8px 10px;
-  }
-  .font-icon i {
+}
+
+.font-icon i {
     font-size: 24px;
-  }
-  .nav-mail .font-icon i:after {
+}
+
+.nav-mail .font-icon i:after {
     background: #2ECC71;
-  }
-  div.user-image {
+}
+
+div.user-image {
     padding: 9px 5px;
     margin: 0 5px;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
-  }
-  .nav-profile {
+}
+
+.nav-profile {
     background: #0274BD;
-  }
-  .nav-profile-image img {
+}
+
+.nav-profile-image img {
     width: 39px;
     height: 41px;
     border-radius: 50%;
     float: left;
-  }
-  .nav-profile-name {
+}
+
+.nav-profile-name {
     float: right;
     margin: 11px 7px 8px 14px;
     color: #fff;
-  }
-  .nav-profile-name i {
+}
+
+.nav-profile-name i {
     padding: 0 0 0 11px;
-  }
-  .nav-chat i:after {
+}
+
+.nav-chat i:after {
     display: none;
-  }
-  #sidebar {
+}
+
+#sidebar {
     overflow: hidden;
     width: 210px;
     height: 100%;
     float: left;
     background: #2A2D33;
-  }
-  #sidebar-nav {
+}
+
+#sidebar-nav {
     width: 106%;
     height: calc(100% - 95px);
     padding: 0;
     background: #2A2D33;
     border-right: 1px solid #E0E0E0;
     overflow-y: scroll;
-  }
-  #sidebar-nav h2 {
+}
+
+#sidebar-nav h2 {
     color: #60636B;
     float: left;
     width: 100%;
@@ -164,14 +197,13 @@ html, body {
     border-top: 1px solid #4D4C4C;
     box-sizing: border-box;
     margin: 10px 0;
-  }
-  #sidebar-nav ul {
-  
-  }
-  #sidebar-nav ul li {
-  
-  }
-  #sidebar-nav ul li a {
+}
+
+#sidebar-nav ul {}
+
+#sidebar-nav ul li {}
+
+#sidebar-nav ul li a {
     color: #C2C2C2;
     font-size: .95em;
     padding: 15px 20px;
@@ -181,48 +213,61 @@ html, body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  }
-  #sidebar-nav ul li:hover a, #sidebar-nav ul li:hover a i, #sidebar-nav li.active a, #sidebar-nav li.active a i {
+}
+
+#sidebar-nav ul li:hover a,
+#sidebar-nav ul li:hover a i,
+#sidebar-nav li.active a,
+#sidebar-nav li.active a i {
     color: #333;
-  }
-  #sidebar-nav ul li:hover a {
+}
+
+#sidebar-nav ul li:hover a {
     background: #fff;
     color: #333;
-  }
-  #sidebar-nav ul li.active a {
+}
+
+#sidebar-nav ul li.active a {
     background: #fff;
     color: #333;
-  }
-  #sidebar-nav ul li.active a i {
+}
+
+#sidebar-nav ul li.active a i {
     background: #fff;
-  }
-  #sidebar-nav i {
+}
+
+#sidebar-nav i {
     padding-right: 8px;
     font-size: 1.3em;
     color: #60636B;
     width: 25px;
     text-align: center;
-  }
-  #content {
+}
+
+#content {
     float: left;
     width: calc(100% - 210px);
     height: 100%;
     word-wrap: break-word;
     background: #FFFFFF;
     font-family: Raleway, sans-serif;
-  }
-  ::-webkit-scrollbar {
-      width: 12px;
-  }
-  ::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-      border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-  }
-  .content {
+}
+
+ ::-webkit-scrollbar {
+    width: 12px;
+}
+
+ ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.content {
     float: left;
     background: #E9EEF4;
     width: 100%;
@@ -230,8 +275,9 @@ html, body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  }
-  .content-header {
+}
+
+.content-header {
     background: #fff;
     float: left;
     width: 100%;
@@ -241,38 +287,47 @@ html, body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border-bottom: 1px solid #ccc;
-  }
-  .content-header h1 {
+}
+
+.content-header h1 {
     margin: 0;
     font-weight: normal;
     padding-bottom: 5px;
-  }
-  .content-header p {
+}
+
+.content-header p {
     margin: 0;
     padding-left: 2px;
-  }
-  .widget-box {
+}
+
+.widget-box {
     background: #fff;
     border: 1px solid #E0E0E0;
     float: left;
     width: 100%;
     margin: 0 0 15px 15px;
-  }
-  .widget-header {
+}
+
+.widget-header {
     background: #279BE4;
-  }
-  .widget-header h2 {
+}
+
+.widget-header h2 {
     font-size: 15px;
     font-weight: normal;
     margin: 0;
     padding: 11px 15px;
     color: #F9F9F9;
     display: inline-block;
-  }
-  .sample-widget {max-width: 47%;}
-  .widget-box .fa-cog {
+}
+
+.sample-widget {
+    max-width: 47%;
+}
+
+.widget-box .fa-cog {
     float: right;
     color: #fff;
     margin: 11px 11px 0 0;
     font-size: 20px;
-  }
+}
