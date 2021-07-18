@@ -20,7 +20,7 @@ footer {
     position: relative;
     width: 100%;
     height: auto;
-    padding: 40px 50px;
+    padding: 40px 70px;
     background: #111;
     display: flex;
     justify-content: space-between;
@@ -64,6 +64,14 @@ footer .container .contentFooter.about h2:before {
 
 footer .container .contentFooter.about p {
     color: #999;
+}
+
+footer .container .contentFooter.copyRight h3 {
+    position: absolute;
+    font-size: 15px;
+    font-weight: 100;
+    margin-bottom: 15px;
+    color: whitesmoke;
 }
 
 
@@ -128,6 +136,7 @@ footer .container .contentFooter.about p {
 }
 
 .links {
+    padding-left: 100px;
     position: relative;
     width: 25%;
 }
@@ -151,6 +160,7 @@ footer .container .contentFooter.about p {
 /* Contacts */
 
 .contact h2 {
+    left: 30px;
     position: relative;
     color: #fff;
     font-weight: 500;
@@ -196,6 +206,13 @@ footer .container .contentFooter.about p {
     text-decoration: none;
 }
 
+.fa.fa-map-marker,
+.fa.fa-phone,
+.fa.fa-envelope {
+    position: relative;
+    padding-left: 30px;
+}
+
 
 /* Subscription */
 
@@ -230,7 +247,7 @@ footer .container .contentFooter.about p {
 }
 
 .form__field {
-    width: 90%;
+    width: 100%;
     background: #fff;
     color: #a3a3a3;
     font: inherit;
@@ -240,8 +257,8 @@ footer .container .contentFooter.about p {
     padding: 8px 24px;
 }
 
-.copyRight {
-    text-decoration: rgb(121, 101, 101) wavy;
+.form-footer {
+    padding-left: 29px;
 }
 
 
