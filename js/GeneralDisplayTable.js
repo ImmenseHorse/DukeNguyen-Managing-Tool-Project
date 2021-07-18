@@ -31,15 +31,22 @@ async function displayList(source, x, updButton) {
     updButton.style.display = 'none';
     const data = await fetch(source);
     const json = await data.json();
-    displayArr(json, x);
 
-    for (let i of json) {
+    const user = [];
+
+    for(let u of json){
+        if(u.username === localStorage.getItem('username')) user.push(u);
+    }
+
+    displayArr(user, x);
+
+    for (let i of user) {
         (document.getElementsByClassName(`${i["id"]}`)[0]).addEventListener('click', () => {
             deleteItem(source, x, `${i["id"]}`, updButton)
         })
     }
     if (source === stockRealTime) {
-        updateOneItem(json, updButton)
+        updateOneItem(user, updButton)
     }
 }
 
