@@ -32,24 +32,25 @@ async function displayList(source, x, updButton) {
     const data = await fetch(source);
     const json = await data.json();
 
-    const user = [];
+    let user = [];
 
-    for(let u of json){
-        if(u.username === localStorage.getItem('username')) user.push(u);
+    for (let u of json) {
+        if (u.username === localStorage.getItem('username')) {
+            user.push(u);
+        };
     }
 
     displayArr(user, x);
 
     for (let i of user) {
-        (document.getElementsByClassName(`${i["id"]}`)[0]).addEventListener('click', () => {
+        document.getElementsByClassName(`${i["id"]}`)[0].addEventListener('click', () => {
             deleteItem(source, x, `${i["id"]}`, updButton)
         })
-    }
-    if (source === stockRealTime) {
-        updateOneItem(user, updButton)
+        if (source === stockRealTime) {
+            updateOneItem(user, updButton)
+        }
     }
 }
-
 
 function updateOneItem(json, updButton) {
     for (let i of json) {
