@@ -95,3 +95,7 @@ h3 {
     width: 100%;
     display: none;
 }
+
+#login-form {
+    padding-top: 20px;
+}
