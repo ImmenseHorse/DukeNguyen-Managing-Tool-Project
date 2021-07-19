@@ -1,8 +1,7 @@
 let employeesRealTime = 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/employeesData';
 
-
 const add2 = document.getElementById('add2');
-const update3 = document.getElementById('myupdate3');
+const update3 = document.getElementById('myUpdate2');
 
 const delete2 = document.getElementsByClassName('delBtn2');
 const clear2 = document.getElementById('clear2');
@@ -28,14 +27,15 @@ clear2.addEventListener('click', () => {
 
 async function updateListEmployees(id) {
     await updateItem(employeesRealTime, id, {
-        "idy": theID.value,
-        "name": name1.value,
-        "grade": grade.value,
-        "origin": origin1.value,
-        "unitprice": unitPrice.value,
-        "availability": availability.value,
-        "shipping": shipping.value,
-        "promotion": promotion.value,
+        "name": name2.value,
+        "degree": degree.value,
+        "age": age.value,
+        "gender": gender.value,
+        "citizenship": citizenship.value,
+        "salary": salary.value,
+        "promotionstatus": pStatus.value,
+        "bonus": bonus.value,
+        "idy": tID.value,
     });
     displayList(employeesRealTime, employeesBody, update3)
     add2.style.display = 'inline';
@@ -43,14 +43,15 @@ async function updateListEmployees(id) {
 
 add2.addEventListener('click', async function() {
     await addNewItem(employeesRealTime, {
-        "idy": theID.value,
-        "name": name1.value,
-        "grade": grade.value,
-        "origin": origin1.value,
-        "unitprice": unitPrice.value,
-        "availability": availability.value,
-        "shipping": shipping.value,
-        "promotion": promotion.value,
+        "name": name2.value,
+        "degree": degree.value,
+        "age": age.value,
+        "gender": gender.value,
+        "citizenship": citizenship.value,
+        "salary": salary.value,
+        "promotionstatus": pStatus.value,
+        "bonus": bonus.value,
+        "idy": tID.value,
         "username": localStorage.getItem('username'),
     });
     tID.value = name2.value = degree.value = age.value = gender.value = citizenship.value = salary.value = pStatus.value = bonus.value = '';

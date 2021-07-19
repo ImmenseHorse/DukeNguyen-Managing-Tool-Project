@@ -1,7 +1,7 @@
 const displayItems = (object, x) => {
     let strHTML = '';
     for (let i in object) {
-        if (i === "idx") {
+        if (i === "idx" || i === "idy") {
             strHTML = `<td>${object[i]}</td>` + strHTML;
         } else if (i != "username" && i != "id") {
             strHTML += `<td>${object[i]}</td>`;
@@ -20,23 +20,37 @@ async function displayArr(json, x) {
 }
 
 async function displayList(source, x, updButton) {
-    theID.value = '';
-    name1.value = '';
-    grade.value = '';
-    origin1.value = '';
-    unitPrice.value = '';
-    availability.value = '';
-    shipping.value = '';
-    promotion.value = '';
+    if (source === 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/employeesData') {
+        tID.value = '';
+        name2.value = '';
+        degree.value = '';
+        age.value = '';
+        gender.value = '';
+        citizenship.value = '';
+        salary.value = '';
+        pStatus.value = '';
+        bonus.value = '';
+
+    } else if (source === 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/stockData') {
+        theID.value = '';
+        name1.value = '';
+        grade.value = '';
+        origin1.value = '';
+        unitPrice.value = '';
+        availability.value = '';
+        shipping.value = '';
+        promotion.value = '';
+    }
+
     updButton.style.display = 'none';
     const data = await fetch(source);
     const json = await data.json();
 
     let user = [];
 
-    for (let u of json) {
-        if (u.username === localStorage.getItem('username')) {
-            user.push(u);
+    for (let i of json) {
+        if (i.username === localStorage.getItem('username')) {
+            user.push(i);
         };
     }
 
@@ -46,28 +60,51 @@ async function displayList(source, x, updButton) {
         document.getElementsByClassName(`${i["id"]}`)[0].addEventListener('click', () => {
             deleteItem(source, x, `${i["id"]}`, updButton)
         })
-        if (source === stockRealTime) {
-            updateOneItem(user, updButton)
-        }
+
+        updateOneItem(source, user, updButton)
+
     }
 }
 
-function updateOneItem(json, updButton) {
-    for (let i of json) {
-        document.getElementsByClassName(`${i["id"]}`)[1].addEventListener('click', () => {
-            add.style.display = 'none';
-            updButton.style.display = 'inline';
-            theID.value = i["idx"];
-            name1.value = i["name"];
-            grade.value = i["grade"];
-            origin1.value = i["origin"];
-            unitPrice.value = i["unitprice"];
-            availability.value = i["availability"];
-            shipping.value = i["shipping"];
-            promotion.value = i["promotion"];
-            updButton.onclick = () => {
-                updateListStock(`${i["id"]}`);
-            }
-        })
+function updateOneItem(source, json, updButton) {
+    if (source === 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/stockData') {
+        for (let i of json) {
+            document.getElementsByClassName(`${i["id"]}`)[1].addEventListener('click', () => {
+                add.style.display = 'none';
+                updButton.style.display = 'inline';
+                theID.value = i["idx"];
+                name1.value = i["name"];
+                grade.value = i["grade"];
+                origin1.value = i["origin"];
+                unitPrice.value = i["unitprice"];
+                availability.value = i["availability"];
+                shipping.value = i["shipping"];
+                promotion.value = i["promotion"];
+                updButton.onclick = () => {
+                    updateListStock(`${i["id"]}`);
+                }
+            })
+        }
+    } else if (source === 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/employeesData') {
+        for (let i of json) {
+            document.getElementsByClassName(`${i["id"]}`)[1].addEventListener('click', () => {
+                add2.style.display = 'none';
+                updButton.style.display = 'inline';
+                name2.value = i["name"];
+                degree.value = i["degree"];
+                age.value = i["age"];
+                gender.value = i["gender"];
+                citizenship.value = i["citizenship"];
+                salary.value = i["salary"];
+                pStatus.value = i["promotionstatus"];
+                bonus.value = i["bonus"];
+                tID.value = i["idy"];
+                updButton.onclick = () => {
+                    updateListEmployees(`${i["id"]}`);
+                }
+            })
+        }
+
+
     }
 }

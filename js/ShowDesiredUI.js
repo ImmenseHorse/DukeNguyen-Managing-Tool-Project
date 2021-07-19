@@ -7,7 +7,6 @@ const rmCheck = document.getElementById("rememberMe");
 async function load() {
     const conn = await fetch("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/loginData");
     const users = await conn.json();
-    console.log(users);
     login.addEventListener('click', (e) => {
         e.preventDefault();
         const loginInfor = {
@@ -96,7 +95,6 @@ btnRegis.addEventListener('click', () => {
             register["registeredFunction"] = "ManageStock";
         }
         addNewItem("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/loginData", register).then(data => {
-            console.log(data);
             alert("Congratulations, your account has been successfully created.");
             alert("Welcome to Managing Tool, " + regisUsername.value + '.');
         });
