@@ -50,7 +50,7 @@ add.addEventListener('click', async function() {
         "availability": availability.value,
         "shipping": shipping.value,
         "promotion": promotion.value,
-        "username" : localStorage.getItem('username'),
+        "username": localStorage.getItem('username'),
     });
     theID.value = name1.value = grade.value = origin1.value = unitPrice.value = availability.value = shipping.value = promotion.value = '';
     displayList(stockRealTime, theBody, update2);

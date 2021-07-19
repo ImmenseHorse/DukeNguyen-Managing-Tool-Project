@@ -14,10 +14,72 @@
 </head>
 
 <body>
-    <h1>Employees' Manager</h1>
     <input type="submit" value="Log out" onclick="location.replace('index.html')">
 
-    <div id="bodyFooter">
+    <h2>Employees' Manager</h2>
+    <div id="ScreenForEmployees">
+        <div>
+            <div class="responsiveTab">
+                <table class="manual">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Degree</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Citizenship</th>
+                        <th>Monthly Salary</th>
+                        <th>Promotion Status</th>
+                        <th>Bonus</th>
+                        <th colspan="3">Adjust</th>
+                    </thead>
+                    <br>
+
+                    <tbody>
+                        <td><input id="idy" type="text"></td>
+                        <td><input id="name2" type="text"></td>
+                        <td><input id="degree" type="text"></td>
+                        <td><input id="age" type="text"></td>
+                        <td><input id="gender" type="text"></td>
+                        <td><input id="citizenship" type="text"></td>
+                        <td><input id="salary" type="text"></td>
+                        <td><input id="pStatus" type="text"></td>
+                        <td><input id="bonus" type="text"></td>
+
+                        <td><button id="add2">Add</button></td>
+                        <td><button id="myUpdate2">Update</button></td>
+                        <td><button id="clear2">Clear</button></td>
+                    </tbody>
+
+                </table>
+
+                <br>
+                <br>
+
+                <table id="tableEmployees">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Degree</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Citizenship</th>
+                        <th>Monthly Salary</th>
+                        <th>Promotion Status</th>
+                        <th>Bonus</th>
+                        <th colspan="2">Adjust</th>
+                    </thead>
+                    <tbody id="EmployeesBody">
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bodyFooter">
         <!-- HTML For Footer -->
         <footer>
             <div class="container">
@@ -81,6 +143,11 @@
 
         </footer>
     </div>
+
+    <script src="js/FetchDesiredData.js"></script>
+    <script src="js/GeneralDisplayTable.js"></script>
+    <script src="js/DisplayEmployees.js"></script>
+
 </body>
 
 </html>
