@@ -5,84 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Stock Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>ImmenseHorse & Co</title>
 </head>
 
 <body>
-
     <div class="wrapper">
-        <h2>Stock Manager</h2>
-        <nav class="disflex-spacebetween">
-            <div>
-                <button onclick="location.replace('feedback.html')">Feedback</button>
-                <button onclick="location.replace('about.html')">About Us</button>
-            </div>
-
-            <button onclick="location.replace('index.html')">Log out</button>
-        </nav>
-        <div id="ScreenForStock">
-            <div>
-                <div class="responsiveTab">
-                    <table class="manual">
-                        <thead>
-                            <th>Barcode</th>
-                            <th>Name</th>
-                            <th>Grade</th>
-                            <th>Origin</th>
-                            <th>Unit Price (VND/kg)</th>
-                            <th>Availability (kg)</th>
-                            <th>Shipping (VND)</th>
-                            <th>Promotion</th>
-                            <th colspan="3">Adjust</th>
-                        </thead>
-
-
-                        <tbody>
-                            <td><input id="idx" type="text"></td>
-                            <td><input id="Name" type="text"></td>
-                            <td><input id="Grade" type="text"></td>
-                            <td><input id="Origin" type="text"></td>
-                            <td><input id="UnitPrice" type="text"></td>
-                            <td><input id="Availability" type="text"></td>
-                            <td><input id="Shipping" type="text"></td>
-                            <td><input id="Promotion" type="text"></td>
-
-                            <td><button id="add">Add</button></td>
-                            <td><button id="myUpdate">Update</button></td>
-                            <td><button id="clear">Clear</button></td>
-                        </tbody>
-
-                    </table>
-
-
-
-
-                    <table class="tableDesign">
-                        <thead>
-                            <th>Barcode</th>
-                            <th>Name</th>
-                            <th>Grade</th>
-                            <th>Origin</th>
-                            <th>Unit Price (VND/kg)</th>
-                            <th>Availability (kg)</th>
-                            <th>Shipping (VND)</th>
-                            <th>Promotion</th>
-                            <th colspan="2">Adjust</th>
-                        </thead>
-                        <tbody id="StockBody">
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-            </div>
+        <textarea name="" id="" cols="30" rows="10" style="width: 100%;"></textarea>
+        <div class="disflex">
+            <button>Submit</button>
+            <button onclick="location.replace('ManageStock.html')">Return</button>
         </div>
+
 
         <div class="bodyFooter">
             <!-- HTML For Footer -->
@@ -149,15 +86,8 @@
 
             </footer>
         </div>
+
     </div>
-
-
-    <script src="js/FetchDesiredData.js"></script>
-
-    <script src="js/GeneralDisplayTable.js"></script>
-
-    <script src="js/DisplayStock.js"></script>
-
 </body>
 
 </html>
