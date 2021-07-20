@@ -3,6 +3,7 @@ body {
     background: url("/images/Employees&Stock-Background.jpg");
 }
 
+
 .disflex{
     display: flex;
     justify-content: space-around;
