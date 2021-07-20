@@ -37,3 +37,8 @@
 .responsiveTab {
     overflow-x: auto;
 }
+
+#SignUp,
+#login {
+    border-radius: 30px;
+}

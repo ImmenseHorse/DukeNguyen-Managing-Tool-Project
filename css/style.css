@@ -1,25 +1,28 @@
 body {
     font-family: "Open Sans", sans-serif;
-    background: url("../images/FlatExcitableCowrie-size_restricted.gif");
 }
 
-
-.disflex{
+.disflex {
+    position: fixed;
+    min-width: 100%;
+    padding: 20px;
     display: flex;
     justify-content: space-around;
 }
 
-.disflex-spacebetween{
+.disflex-spacebetween {
     display: flex;
     justify-content: space-between;
 }
 
 .wrapper {
-    width: 960px;
+    width: 960x;
     margin: auto;
 }
 
 #login-regis {
+    border-radius: 30px;
+    margin-left: 4cm;
     padding: 20px 20px;
     flex-basis: 360px;
     height: auto;
@@ -98,8 +101,10 @@ h3 {
 }
 
 .about-us {
+    margin-top: 50px;
+    margin-right: 40px !important;
+    color: rgb(224, 240, 240);
     flex-basis: 500px;
-    margin: 15px;
 }
 
 #register {
@@ -107,11 +112,11 @@ h3 {
     display: none;
 }
 
-.manual{
+.manual {
     margin: 20px 0px;
 }
 
-button{
+button {
     background-color: rgba(0, 0, 255, 0.692);
     margin-top: 10px;
     color: rgb(166, 255, 0);

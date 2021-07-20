@@ -10,14 +10,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/logIn&register.css">
     <title>ImmenseHorse & Co</title>
 </head>
 
 <body>
+    <video autoplay muted loop id="logInVideo">
+        <source src="images/LogIn-Register-Background.mp4" type="video/mp4">
+      </video>
     <header>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
     </header>
+
     <div class="wrapper disflex">
         <div id="login-regis">
             <div id="login-form">
@@ -72,10 +80,22 @@
                     <li>Up-to-date manage stock.</li>
                     <li>And more to come !!!</li>
                 </ul>
+                <br>
+                <br>
+                <button id="pauseButton" onclick="stopMotion()">Stop Motion</button>
             </h3>
 
         </div>
+
     </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <div class="bodyFooter">
         <!-- HTML For Footer -->
@@ -142,9 +162,11 @@
         </footer>
     </div>
 
+    <script src="js/controlMotion.js"></script>
     <script src="js/ManageLogInData.js"></script>
     <script src="js/FetchDesiredData.js"></script>
     <script src="js/ShowDesiredUI.js"></script>
+
 
 </body>
 
