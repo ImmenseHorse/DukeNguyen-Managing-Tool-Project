@@ -14,70 +14,81 @@
 </head>
 
 <body>
-    <input type="submit" value="Log out" onclick="location.replace('index.html')">
+    
+    <div class="wrapper">
+        <h2>Employees' Manager</h2>
 
-    <h2>Employees' Manager</h2>
-    <div id="ScreenForEmployees">
-        <div>
-            <div class="responsiveTab">
-                <table class="manual">
-                    <thead>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Degree</th>
-                        <th>Age</th>
-                        <th>Gender</th>
-                        <th>Citizenship</th>
-                        <th>Monthly Salary</th>
-                        <th>Promotion Status</th>
-                        <th>Bonus</th>
-                        <th colspan="3">Adjust</th>
-                    </thead>
-                    <br>
-
-                    <tbody>
-                        <td><input id="idy" type="text"></td>
-                        <td><input id="name2" type="text"></td>
-                        <td><input id="degree" type="text"></td>
-                        <td><input id="age" type="text"></td>
-                        <td><input id="gender" type="text"></td>
-                        <td><input id="citizenship" type="text"></td>
-                        <td><input id="salary" type="text"></td>
-                        <td><input id="pStatus" type="text"></td>
-                        <td><input id="bonus" type="text"></td>
-
-                        <td><button id="add2">Add</button></td>
-                        <td><button id="myUpdate2">Update</button></td>
-                        <td><button id="clear2">Clear</button></td>
-                    </tbody>
-
-                </table>
-
-                <br>
-                <br>
-
-                <table class="tableDesign">
-                    <thead>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Degree</th>
-                        <th>Age</th>
-                        <th>Gender</th>
-                        <th>Citizenship</th>
-                        <th>Monthly Salary</th>
-                        <th>Promotion Status</th>
-                        <th>Bonus</th>
-                        <th colspan="2">Adjust</th>
-                    </thead>
-                    <tbody id="EmployeesBody">
-
-                    </tbody>
-                </table>
-
+        <nav class="disflex-spacebetween">
+            <div>
+                <button onclick="location.replace('feedback.html')">Feedback</button>
+                <button onclick="location.replace('about.html')">About Us</button>
             </div>
 
+            <button onclick="location.replace('index.html')">Log out</button>
+        </nav>
+        <div id="ScreenForEmployees">
+            <div>
+                <div class="responsiveTab">
+                    <table class="manual">
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Degree</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Citizenship</th>
+                            <th>Monthly Salary</th>
+                            <th>Promotion Status</th>
+                            <th>Bonus</th>
+                            <th colspan="3">Adjust</th>
+                        </thead>
+                        <br>
+
+                        <tbody>
+                            <td><input id="idy" type="text"></td>
+                            <td><input id="name2" type="text"></td>
+                            <td><input id="degree" type="text"></td>
+                            <td><input id="age" type="text"></td>
+                            <td><input id="gender" type="text"></td>
+                            <td><input id="citizenship" type="text"></td>
+                            <td><input id="salary" type="text"></td>
+                            <td><input id="pStatus" type="text"></td>
+                            <td><input id="bonus" type="text"></td>
+
+                            <td><button id="add2">Add</button></td>
+                            <td><button id="myUpdate2">Update</button></td>
+                            <td><button id="clear2">Clear</button></td>
+                        </tbody>
+
+                    </table>
+
+                    <br>
+                    <br>
+
+                    <table class="tableDesign">
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Degree</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Citizenship</th>
+                            <th>Monthly Salary</th>
+                            <th>Promotion Status</th>
+                            <th>Bonus</th>
+                            <th colspan="2">Adjust</th>
+                        </thead>
+                        <tbody id="EmployeesBody">
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
         </div>
     </div>
+
 
     <div class="bodyFooter">
         <!-- HTML For Footer -->
@@ -86,7 +97,8 @@
                 <!-- Intro -->
                 <div class="contentFooter about">
                     <h2>About Us</h2>
-                    <p>We are a team of developers who thrive to develop a bug- free, easy to use, and effective Web Application to make the managerial process become a great experience.</p>
+                    <p>We are a team of developers who thrive to develop a bug- free, easy to use, and effective Web
+                        Application to make the managerial process become a great experience.</p>
                     <ul class="social-icon">
                         <li><a href=""><i class="fa fa-facebook"></i></a></li>
                         <li><a href=""><i class="fa fa-twitter"></i></a></li>
