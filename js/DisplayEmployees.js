@@ -19,20 +19,20 @@ const bonus = document.getElementById('bonus');
 const employeesBody = document.getElementById('EmployeesBody');
 
 //search
-const text1 = document.getElementById("textName1");
-const btnSearch1 = document.getElementById("search1");
-const btnRestore1 = document.getElementById("restore1");
+const text = document.getElementById("textName1");
+const btnSearch = document.getElementById("search1");
+const btnRestore = document.getElementById("restore1");
 
-btnSearch1.addEventListener('click', () => {
-    btnRestore1.style.display = "inline";
-    btnSearch1.style.display = "none";
+btnSearch.addEventListener('click', () => {
+    btnRestore.style.display = "inline";
+    btnSearch.style.display = "none";
     displayList(employeesRealTime, employeesBody, update3);
 });
 
-btnRestore1.addEventListener('click', () => {
-    text1.value = "";
-    btnRestore1.style.display = "none";
-    btnSearch1.style.display = "inline";
+btnRestore.addEventListener('click', () => {
+    text.value = "";
+    btnRestore.style.display = "none";
+    btnSearch.style.display = "inline";
     displayList(employeesRealTime, employeesBody, update3);
 });
 

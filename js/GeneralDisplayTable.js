@@ -58,12 +58,12 @@ async function displayList(source, x, updButton) {
 
     //search
     // console.log(user);
-    let user1 = [];
+    let user1 = [], user2 = [];
     if ( text.value ) {
         for(let i of user){
             if(text.value == i.name) user1.push(i);
         }
-        // console.log(user1);
+        console.log(user1);
         displayArr(user1, x);
         for (let i of user1) {
             document.getElementsByClassName(`${i["id"]}`)[0].addEventListener('click', () => {
