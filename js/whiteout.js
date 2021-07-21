@@ -17,6 +17,6 @@ async function addNewItem(source, data) {
 document.getElementById('blank1').addEventListener('click', () => {
     addNewItem("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/feedback", {
         "username": `${localStorage.username}`,
-        "content": `${document.getElementById("blank2").value}`
+        "content": `${document.getElementById("blank2").value}`,
     }).then(document.getElementById("blank2").value = '');
 })
