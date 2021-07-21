@@ -60,37 +60,21 @@ async function updateListEmployees(id) {
 };
 
 add2.addEventListener('click', async function() {
-    if (localStorage.username) {
-        await addNewItem(employeesRealTime, {
-            "name": name2.value,
-            "degree": degree.value,
-            "age": age.value,
-            "gender": gender.value,
-            "citizenship": citizenship.value,
-            "salary": salary.value,
-            "promotionstatus": pStatus.value,
-            "bonus": bonus.value,
-            "idy": tID.value,
-            "username": localStorage.username,
-        });
-        tID.value = name2.value = degree.value = age.value = gender.value = citizenship.value = salary.value = pStatus.value = bonus.value = '';
-        displayList(employeesRealTime, employeesBody, update3);
-    } else if (sessionStorage.username) {
-        await addNewItem(employeesRealTime, {
-            "name": name2.value,
-            "degree": degree.value,
-            "age": age.value,
-            "gender": gender.value,
-            "citizenship": citizenship.value,
-            "salary": salary.value,
-            "promotionstatus": pStatus.value,
-            "bonus": bonus.value,
-            "idy": tID.value,
-            "username": sessionStorage.username,
-        });
-        tID.value = name2.value = degree.value = age.value = gender.value = citizenship.value = salary.value = pStatus.value = bonus.value = '';
-        displayList(employeesRealTime, employeesBody, update3);
-    }
+    await addNewItem(employeesRealTime, {
+        "name": name2.value,
+        "degree": degree.value,
+        "age": age.value,
+        "gender": gender.value,
+        "citizenship": citizenship.value,
+        "salary": salary.value,
+        "promotionstatus": pStatus.value,
+        "bonus": bonus.value,
+        "idy": tID.value,
+        "username": localStorage.username,
+    });
+    tID.value = name2.value = degree.value = age.value = gender.value = citizenship.value = salary.value = pStatus.value = bonus.value = '';
+    displayList(employeesRealTime, employeesBody, update3);
+
 });
 
 displayList(employeesRealTime, employeesBody, update3);
