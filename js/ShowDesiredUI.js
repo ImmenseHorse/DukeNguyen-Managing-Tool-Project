@@ -99,18 +99,18 @@ btnRegis.addEventListener('click', () => {
             register["registeredFunction"] = "ManageStock";
             localStorage.setItem("registeredFunction", "ManageStock");
         }
-        addNewItem("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/loginData", register).then(data => {
+        addNewItem("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/loginData", register).then(() => {
             alert("Congratulations, your account has been successfully created.");
             alert("Welcome to Managing Tool, " + regisUsername.value + '.');
-        });
-        switch (localStorage.getItem('registeredFunction')) {
-            case 'ManageEmployees':
+            localStorage.username = regisUsername.value;
+            localStorage.pass = regisPass.value;
+            localStorage.checkbox = rmCheck.value;
+            if (localStorage.getItem('registeredFunction') === 'ManageEmployees') {
                 location.replace("ManageEmployees.html");
-                break;
-            case 'ManageStock':
+            } else if (localStorage.getItem('registeredFunction') === 'ManageStock') {
                 location.replace("ManageStock.html");
-                break;
-        }
+            }
+        });
     }
 
 });
