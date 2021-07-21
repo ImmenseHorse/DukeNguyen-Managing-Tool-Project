@@ -81,12 +81,17 @@ let regisTel = document.getElementById("tel");
 let btnRegis = document.getElementById("register2");
 const register = {};
 
+let correctEMail = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+
 btnRegis.addEventListener('click', () => {
     if (!(regisUsername.value) || !(regisPass.value) || !(regisPassAgain.value) || !(regisEmail.value) || !(regisTel.value)) {
         alert("Please Enter All Values");
     }
     if (regisPass.value != regisPassAgain.value) {
         alert("Invalid Password");
+    }
+    if (!regisEmail.value.match(correctMail)) {
+        alert("Your email address is invalid!");
     } else {
         register['username'] = regisUsername.value;
         register['password'] = regisPass.value;
