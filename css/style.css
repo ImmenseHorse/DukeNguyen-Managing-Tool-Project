@@ -122,3 +122,19 @@ button {
     margin-top: 10px;
     color: rgb(166, 255, 0);
 }
+
+#textName, #textName1{
+    margin: 0px;
+    padding: 0px;
+}
+
+#search, #search1{
+    padding: 0px;
+    margin: 0px;
+}
+
+#restore, #restore1{
+    margin: 0px;
+    padding: 0px;
+    display: none;
+}

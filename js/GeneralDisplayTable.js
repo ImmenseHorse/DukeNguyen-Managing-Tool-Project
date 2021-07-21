@@ -64,16 +64,35 @@ async function displayList(source, x, updButton) {
         }
     }
 
-    displayArr(user, x);
-
-    for (let i of user) {
-        document.getElementsByClassName(`${i["id"]}`)[0].addEventListener('click', () => {
-            deleteItem(source, x, `${i["id"]}`, updButton)
-        })
-
-        updateOneItem(source, user, updButton)
-
+    //search
+    // console.log(user);
+    let user1 = [];
+    if ( text.value ) {
+        for(let i of user){
+            if(text.value == i.name) user1.push(i);
+        }
+        // console.log(user1);
+        displayArr(user1, x);
+        for (let i of user1) {
+            document.getElementsByClassName(`${i["id"]}`)[0].addEventListener('click', () => {
+                deleteItem(source, x, `${i["id"]}`, updButton)
+            })
+    
+            updateOneItem(source, user1, updButton)
+    
+        }
+    } else {
+        displayArr(user, x);
+        for (let i of user) {
+            document.getElementsByClassName(`${i["id"]}`)[0].addEventListener('click', () => {
+                deleteItem(source, x, `${i["id"]}`, updButton)
+            })
+    
+            updateOneItem(source, user, updButton)
+    
+        }
     }
+    
 }
 
 function updateOneItem(source, json, updButton) {

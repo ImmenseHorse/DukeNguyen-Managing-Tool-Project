@@ -18,6 +18,24 @@ const bonus = document.getElementById('bonus');
 
 const employeesBody = document.getElementById('EmployeesBody');
 
+//search
+const text1 = document.getElementById("textName1");
+const btnSearch1 = document.getElementById("search1");
+const btnRestore1 = document.getElementById("restore1");
+
+btnSearch1.addEventListener('click', () => {
+    btnRestore1.style.display = "inline";
+    btnSearch1.style.display = "none";
+    displayList(employeesRealTime, employeesBody, update3);
+});
+
+btnRestore1.addEventListener('click', () => {
+    text1.value = "";
+    btnRestore1.style.display = "none";
+    btnSearch1.style.display = "inline";
+    displayList(employeesRealTime, employeesBody, update3);
+});
+
 clear2.addEventListener('click', () => {
     tID.value = name2.value = degree.value = age.value = gender.value = citizenship.value = salary.value = pStatus.value = bonus.value = '';
     update3.style.display = 'none';

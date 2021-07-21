@@ -18,6 +18,24 @@ const promotion = document.getElementById('Promotion');
 
 const theBody = document.getElementById('StockBody');
 
+//search
+const text = document.getElementById("textName");
+const btnSearch = document.getElementById("search");
+const btnRestore = document.getElementById("restore");
+
+btnSearch.addEventListener('click', () => {
+    btnRestore.style.display = "inline";
+    btnSearch.style.display = "none";
+    displayList(stockRealTime, theBody, update2);
+});
+
+btnRestore.addEventListener('click', () => {
+    text.value = "";
+    btnRestore.style.display = "none";
+    btnSearch.style.display = "inline";
+    displayList(stockRealTime, theBody, update2);
+});
+
 clear.addEventListener('click', () => {
     theID.value = name1.value = grade.value = origin1.value = unitPrice.value = availability.value = shipping.value = promotion.value = '';
     update2.style.display = 'none';
