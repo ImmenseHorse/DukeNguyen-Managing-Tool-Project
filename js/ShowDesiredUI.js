@@ -15,12 +15,14 @@ async function load() {
         }
         if (!loginInfor.username) {
             alert("Enter your username");
+            localStorage.setItem("checkLogin", 'false');
         } else if (!loginInfor.password) {
             alert("Enter your password");
+            localStorage.setItem("checkLogin", 'false');
         } else {
             localStorage.setItem("checkLogin", 'false');
             for (let user of users) {
-                if (loginInfor.username == user["username"] && loginInfor.password == user["password"]) {
+                if (loginInfor.username === user["username"] && loginInfor.password === user["password"]) {
                     localStorage.setItem("checkLogin", 'true');
                     localStorage.setItem("registeredFunction", user["registeredFunction"]);
                     break;
@@ -28,7 +30,7 @@ async function load() {
             }
         }
 
-        if (localStorage.getItem('checkLogin') == 'true') {
+        if (localStorage.getItem('checkLogin') === 'true') {
             switch (localStorage.getItem('registeredFunction')) {
                 case 'ManageEmployees':
                     location.replace("ManageEmployees.html");
@@ -47,32 +49,19 @@ async function load() {
         pass.value = localStorage.pass;
     } else {
         rmCheck.removeAttribute("checked");
-        localStorage.setItem("checkLogin", 'false');
         username.value = "";
         pass.value = "";
     }
 
     login.addEventListener('click', () => {
         if (rmCheck.checked && username.value !== "" && pass.value !== "") {
-            sessionStorage.username = '';
-            sessionStorage.pass = '';
             localStorage.username = username.value;
             localStorage.pass = pass.value;
             localStorage.checkbox = rmCheck.value;
         } else if (username.value !== "" && pass.value !== "") {
-            localStorage.username = '';
-            localStorage.pass = '';
-            sessionStorage.username = username.value;
-            sessionStorage.pass = pass.value;
+            localStorage.username = username.value;
+            localStorage.pass = pass.value;
             localStorage.checkbox = '';
-            localStorage.setItem("checkLogin", 'false');
-        } else {
-            localStorage.username = '';
-            localStorage.pass = '';
-            sessionStorage.username = '';
-            sessionStorage.pass = '';
-            localStorage.checkbox = '';
-            localStorage.setItem("checkLogin", 'false');
         }
     });
 }
@@ -80,7 +69,7 @@ async function load() {
 load();
 
 
-//Register   ========================================
+//Register   =========================================
 
 let regisUsername = document.getElementById("regis-username");
 let regisPass = document.getElementById("regis-pass");
@@ -103,17 +92,25 @@ btnRegis.addEventListener('click', () => {
         register['password'] = regisPass.value;
         register['email'] = regisEmail.value;
         register['tel'] = regisTel.value;
-        if (btnCheckEmployees == true) {
+        if (btnCheckEmployees === true) {
             register["registeredFunction"] = btnCheckEmployees.value;
+            localStorage.setItem("registeredFunction", "ManageEmployees");
         } else {
             register["registeredFunction"] = "ManageStock";
+            localStorage.setItem("registeredFunction", "ManageStock");
         }
         addNewItem("https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/loginData", register).then(data => {
             alert("Congratulations, your account has been successfully created.");
             alert("Welcome to Managing Tool, " + regisUsername.value + '.');
         });
-        document.getElementById("login-form").style.display = "block";
-        document.getElementById("register").style.display = "none";
+        switch (localStorage.getItem('registeredFunction')) {
+            case 'ManageEmployees':
+                location.replace("ManageEmployees.html");
+                break;
+            case 'ManageStock':
+                location.replace("ManageStock.html");
+                break;
+        }
     }
 
 });

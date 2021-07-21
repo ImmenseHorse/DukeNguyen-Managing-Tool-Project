@@ -1,7 +1,7 @@
 const displayItems = (object, x) => {
     let strHTML = '';
     for (let i in object) {
-        if (i == "idx" || i == "idy") {
+        if (i === "idx" || i === "idy") {
             strHTML = `<td>${object[i]}</td>` + strHTML;
         } else if (i != "username" && i != "id") {
             strHTML += `<td>${object[i]}</td>`;
@@ -20,7 +20,7 @@ async function displayArr(json, x) {
 }
 
 async function displayList(source, x, updButton) {
-    if (source == 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/employeesData') {
+    if (source === 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/employeesData') {
         tID.value = '';
         name2.value = '';
         degree.value = '';
@@ -31,7 +31,7 @@ async function displayList(source, x, updButton) {
         pStatus.value = '';
         bonus.value = '';
 
-    } else if (source == 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/stockData') {
+    } else if (source === 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/stockData') {
         theID.value = '';
         name1.value = '';
         grade.value = '';
@@ -48,21 +48,14 @@ async function displayList(source, x, updButton) {
 
     let user = [];
 
-    if (localStorage.username) {
-        for (let i of json) {
-            if (i["username"] == localStorage.username) {
-                user.push(i);
-            };
 
-        }
-    } else if (sessionStorage.username) {
-        for (let i of json) {
-            if (i["username"] == sessionStorage.username) {
-                user.push(i);
-            };
+    for (let i of json) {
+        if (i["username"] === localStorage.username) {
+            user.push(i);
+        };
 
-        }
     }
+
 
     displayArr(user, x);
 
@@ -77,7 +70,7 @@ async function displayList(source, x, updButton) {
 }
 
 function updateOneItem(source, json, updButton) {
-    if (source == 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/stockData') {
+    if (source === 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/stockData') {
         for (let i of json) {
             document.getElementsByClassName(`${i["id"]}`)[1].addEventListener('click', () => {
                 add.style.display = 'none';
@@ -95,7 +88,7 @@ function updateOneItem(source, json, updButton) {
                 }
             })
         }
-    } else if (source == 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/employeesData') {
+    } else if (source === 'https://60dab586801dcb0017290af3.mockapi.io/api/ducnguyen/employeesData') {
         for (let i of json) {
             document.getElementsByClassName(`${i["id"]}`)[1].addEventListener('click', () => {
                 add2.style.display = 'none';
