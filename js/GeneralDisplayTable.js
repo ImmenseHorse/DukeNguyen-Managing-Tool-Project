@@ -55,7 +55,7 @@ async function displayList(source, x, updButton) {
             };
 
         }
-    } else {
+    } else if (sessionStorage.username) {
         for (let i of json) {
             if (i["username"] == sessionStorage.username) {
                 user.push(i);
@@ -120,5 +120,5 @@ function updateOneItem(source, json, updButton) {
 }
 
 const backFunction = () => {
-    window.location.replace('https://immensehorse.github.io/DukeNguyen-Managing-Tool-Project/');
+    location.replace('index.html');
 }

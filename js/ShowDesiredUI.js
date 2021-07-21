@@ -47,12 +47,15 @@ async function load() {
         pass.value = localStorage.pass;
     } else {
         rmCheck.removeAttribute("checked");
+        localStorage.setItem("checkLogin", 'false');
         username.value = "";
         pass.value = "";
     }
 
     login.addEventListener('click', () => {
         if (rmCheck.checked && username.value !== "" && pass.value !== "") {
+            sessionStorage.username = '';
+            sessionStorage.pass = '';
             localStorage.username = username.value;
             localStorage.pass = pass.value;
             localStorage.checkbox = rmCheck.value;
@@ -62,6 +65,7 @@ async function load() {
             sessionStorage.username = username.value;
             sessionStorage.pass = pass.value;
             localStorage.checkbox = '';
+            localStorage.setItem("checkLogin", 'false');
         } else {
             localStorage.username = '';
             localStorage.pass = '';

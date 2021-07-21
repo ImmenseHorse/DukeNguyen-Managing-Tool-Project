@@ -57,7 +57,7 @@ add2.addEventListener('click', async function() {
         });
         tID.value = name2.value = degree.value = age.value = gender.value = citizenship.value = salary.value = pStatus.value = bonus.value = '';
         displayList(employeesRealTime, employeesBody, update3);
-    } else {
+    } else if (sessionStorage.username) {
         await addNewItem(employeesRealTime, {
             "name": name2.value,
             "degree": degree.value,

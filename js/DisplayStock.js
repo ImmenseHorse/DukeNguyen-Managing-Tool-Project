@@ -55,7 +55,7 @@ add.addEventListener('click', async function() {
         });
         theID.value = name1.value = grade.value = origin1.value = unitPrice.value = availability.value = shipping.value = promotion.value = '';
         displayList(stockRealTime, theBody, update2);
-    } else {
+    } else if (sessionStorage.username) {
         await addNewItem(stockRealTime, {
             "idx": theID.value,
             "name": name1.value,
