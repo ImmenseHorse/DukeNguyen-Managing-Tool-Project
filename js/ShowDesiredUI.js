@@ -92,8 +92,6 @@ btnRegis.addEventListener('click', () => {
         alert('Password must have 6-16 characters');
     } else if (regisPass.value != regisPassAgain.value) {
         alert("Invalid Password");
-    } else if (!(regisEmail.value.match(correctEMail))) {
-        alert("Your email address is invalid!");
     } else {
         register['username'] = regisUsername.value;
         register['password'] = regisPass.value;
