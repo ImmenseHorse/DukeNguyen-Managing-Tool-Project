@@ -86,11 +86,13 @@ let correctEMail = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
 btnRegis.addEventListener('click', () => {
     if (!(regisUsername.value) || !(regisPass.value) || !(regisPassAgain.value) || !(regisEmail.value) || !(regisTel.value)) {
         alert("Please Enter All Values");
-    }
-    if (regisPass.value != regisPassAgain.value) {
+    } else if ((regisUsername.value).length < 8 || (regisUsername.value).length > 14) {
+        alert('Username must have 8-14 characters');
+    } else if ((regisPass.value).length < 6 || (regisPass.value).length > 16) {
+        alert('Password must have 6-16 characters');
+    } else if (regisPass.value != regisPassAgain.value) {
         alert("Invalid Password");
-    }
-    if (!regisEmail.value.match(correctMail)) {
+    } else if (!regisEmail.value.match(correctMail)) {
         alert("Your email address is invalid!");
     } else {
         register['username'] = regisUsername.value;
