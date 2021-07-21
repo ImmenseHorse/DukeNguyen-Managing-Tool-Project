@@ -17,8 +17,13 @@ body.theScreenNewStyle {
 }
 
 .wrapper {
+    padding-top: 50px;
     width: 960px;
     margin: auto;
+}
+
+.wrapper h2 {
+    color: rgb(0, 255, 191);
 }
 
 #login-regis {
@@ -117,24 +122,35 @@ h3 {
     margin: 20px 0px;
 }
 
-button {
-    background-color: rgba(0, 0, 255, 0.692);
-    margin-top: 10px;
-    color: rgb(166, 255, 0);
+.disflex-spacebetween div button {
+    border-radius: 15px;
+    background-color: rgb(238, 73, 128);
+    padding: 3px 3px;
+    color: black;
 }
 
-#textName, #textName1{
+#textName,
+#textName1 {
     margin: 0px;
     padding: 0px;
 }
 
-#search, #search1{
+#search,
+#search1 {
     padding: 0px;
     margin: 0px;
 }
 
-#restore, #restore1{
+#restore,
+#restore1 {
     margin: 0px;
     padding: 0px;
     display: none;
+}
+
+.more {
+    padding: 2px 2px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
 }
