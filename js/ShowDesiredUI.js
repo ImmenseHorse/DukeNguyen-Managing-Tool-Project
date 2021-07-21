@@ -20,15 +20,15 @@ async function load() {
         } else {
             localStorage.setItem("checkLogin", 'false');
             for (let user of users) {
-                if (loginInfor.username === user.username && loginInfor.password === user.password) {
+                if (loginInfor.username == user["username"] && loginInfor.password == user["password"]) {
                     localStorage.setItem("checkLogin", 'true');
-                    localStorage.setItem("registeredFunction", user.registeredFunction);
+                    localStorage.setItem("registeredFunction", user["registeredFunction"]);
                     break;
                 }
             }
         }
 
-        if (localStorage.getItem('checkLogin') === 'true') {
+        if (localStorage.getItem('checkLogin') == 'true') {
             switch (localStorage.getItem('registeredFunction')) {
                 case 'ManageEmployees':
                     location.replace("ManageEmployees.html");
@@ -52,15 +52,22 @@ async function load() {
     }
 
     login.addEventListener('click', () => {
-        if (rmCheck.checked === "checked" && username.value !== "" && pass.value !== "") {
+        if (rmCheck.checked && username.value !== "" && pass.value !== "") {
             localStorage.username = username.value;
             localStorage.pass = pass.value;
             localStorage.checkbox = rmCheck.value;
-        } else if (!rmCheck.checked && username.value !== "" && pass.value !== "") {
-            localStorage.username = username.value;
-            localStorage.pass = pass.value;
+        } else if (username.value !== "" && pass.value !== "") {
+            localStorage.username = '';
+            localStorage.pass = '';
+            sessionStorage.username = username.value;
+            sessionStorage.pass = pass.value;
             localStorage.checkbox = '';
         } else {
+            localStorage.username = '';
+            localStorage.pass = '';
+            sessionStorage.username = '';
+            sessionStorage.pass = '';
+            localStorage.checkbox = '';
             localStorage.setItem("checkLogin", 'false');
         }
     });
@@ -69,7 +76,7 @@ async function load() {
 load();
 
 
-//Register   =========================================================================================
+//Register   ========================================
 
 let regisUsername = document.getElementById("regis-username");
 let regisPass = document.getElementById("regis-pass");
@@ -92,7 +99,7 @@ btnRegis.addEventListener('click', () => {
         register['password'] = regisPass.value;
         register['email'] = regisEmail.value;
         register['tel'] = regisTel.value;
-        if (btnCheckEmployees === true) {
+        if (btnCheckEmployees == true) {
             register["registeredFunction"] = btnCheckEmployees.value;
         } else {
             register["registeredFunction"] = "ManageStock";

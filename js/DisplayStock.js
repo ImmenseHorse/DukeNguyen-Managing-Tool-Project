@@ -41,19 +41,35 @@ async function updateListStock(id) {
 };
 
 add.addEventListener('click', async function() {
-    await addNewItem(stockRealTime, {
-        "idx": theID.value,
-        "name": name1.value,
-        "grade": grade.value,
-        "origin": origin1.value,
-        "unitprice": unitPrice.value,
-        "availability": availability.value,
-        "shipping": shipping.value,
-        "promotion": promotion.value,
-        "username": localStorage.getItem('username'),
-    });
-    theID.value = name1.value = grade.value = origin1.value = unitPrice.value = availability.value = shipping.value = promotion.value = '';
-    displayList(stockRealTime, theBody, update2);
+    if (localStorage.username) {
+        await addNewItem(stockRealTime, {
+            "idx": theID.value,
+            "name": name1.value,
+            "grade": grade.value,
+            "origin": origin1.value,
+            "unitprice": unitPrice.value,
+            "availability": availability.value,
+            "shipping": shipping.value,
+            "promotion": promotion.value,
+            "username": localStorage.username,
+        });
+        theID.value = name1.value = grade.value = origin1.value = unitPrice.value = availability.value = shipping.value = promotion.value = '';
+        displayList(stockRealTime, theBody, update2);
+    } else {
+        await addNewItem(stockRealTime, {
+            "idx": theID.value,
+            "name": name1.value,
+            "grade": grade.value,
+            "origin": origin1.value,
+            "unitprice": unitPrice.value,
+            "availability": availability.value,
+            "shipping": shipping.value,
+            "promotion": promotion.value,
+            "username": sessionStorage.username,
+        });
+        theID.value = name1.value = grade.value = origin1.value = unitPrice.value = availability.value = shipping.value = promotion.value = '';
+        displayList(stockRealTime, theBody, update2);
+    }
 });
 
 displayList(stockRealTime, theBody, update2);
