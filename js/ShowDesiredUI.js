@@ -97,7 +97,7 @@ btnRegis.addEventListener('click', () => {
         register['password'] = regisPass.value;
         register['email'] = regisEmail.value;
         register['tel'] = regisTel.value;
-        if (btnCheckEmployees === true) {
+        if (btnCheckEmployees.checked === true) {
             register["registeredFunction"] = btnCheckEmployees.value;
             localStorage.setItem("registeredFunction", "ManageEmployees");
         } else {
